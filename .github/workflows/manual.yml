@@ -36,3 +36,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LINK_ROOT: ${{ secrets.LINK_ROOT }}
+
+    - run: echo ${{ secrets.LINK_ROOT }}
