@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Statiq.App;
+using Statiq.Common;
 using Statiq.Web;
 
 namespace MySite
