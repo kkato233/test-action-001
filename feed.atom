@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<id>/</id>
+	<id>/test-action-001</id>
 	<title />
-	<link rel="self" href="/" />
+	<link rel="self" href="/test-action-001" />
 	<rights>Copyright © 2021</rights>
-	<updated>2021-01-31T08:43:35Z</updated>
+	<updated>2021-01-31T08:54:49Z</updated>
 </feed>
