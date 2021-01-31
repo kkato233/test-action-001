@@ -32,9 +32,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LINK_ROOT: ${{ secrets.LINK_ROOT }}
   
-    - run: echo ${env:LINK_ROOT}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - env:
         LINK_ROOT: ${{ secrets.LINK_ROOT }}
+      run: echo ${env:LINK_ROOT}
 
-    - run: echo ${{ secrets.LINK_ROOT }}
+
+    - run: echo "${{ secrets.LINK_ROOT }}"
