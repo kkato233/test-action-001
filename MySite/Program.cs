@@ -1,12 +1,15 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using Statiq.App;
+using Statiq.Web;
 
 namespace MySite
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        public static async Task<int> Main(string[] args) =>
+            await Bootstrapper
+            .Factory
+            .CreateWeb(args)
+            .RunAsync();
     }
 }

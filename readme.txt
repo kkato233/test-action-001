@@ -1,3 +1,9 @@
 https://statiq.dev/web/
-�̏������Ƃ� �y�[�W���쐬���Ă݂��B
+の情報をもとに ページを作成してみた。
+
+input ディレクトリに index.md を登録して
+
+dotnet run -- preview を実行
+
+最初のページができた。
 
