@@ -12,6 +12,7 @@ jobs:
       with:
         dotnet-version: '5.0.102' # SDK Version to use.
     - run: dotnet run -- deploy
+      shell: cmd
       working-directory: WebSite
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
