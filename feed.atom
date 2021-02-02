@@ -3,6 +3,26 @@
 	<id>/test-action-001</id>
 	<title />
 	<link rel="self" href="/test-action-001" />
-	<rights>Copyright © 2021</rights>
-	<updated>2021-01-31T11:54:38Z</updated>
+	<rights>Copyright © 2021 シオン株式会社 All Rights Reserved.</rights>
+	<updated>2021-02-02T14:41:52Z</updated>
+	<entry>
+		<id>/test-action-001/posts/002</id>
+		<title>INDEX</title>
+		<link href="/test-action-001/posts/002" />
+		<updated>2021-02-02T14:39:55Z</updated>
+		<content>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<id>/test-action-001/posts/001</id>
+		<title>My First Statiq page</title>
+		<link href="/test-action-001/posts/001" />
+		<updated>2021-02-02T14:39:55Z</updated>
+		<content>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</summary>
+	</entry>
 </feed>

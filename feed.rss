@@ -1,11 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title />
 		<link>/test-action-001</link>
 		<description />
-		<copyright>Copyright © 2021</copyright>
-		<pubDate>Sun, 31 Jan 2021 11:54:38 GMT</pubDate>
-		<lastBuildDate>Sun, 31 Jan 2021 11:54:38 GMT</lastBuildDate>
+		<copyright>Copyright © 2021 シオン株式会社 All Rights Reserved.</copyright>
+		<pubDate>Tue, 02 Feb 2021 14:41:52 GMT</pubDate>
+		<lastBuildDate>Tue, 02 Feb 2021 14:41:52 GMT</lastBuildDate>
+		<item>
+			<title>INDEX</title>
+			<link>/test-action-001/posts/002</link>
+			<description>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</description>
+			<guid isPermaLink="false">/test-action-001/posts/002</guid>
+			<pubDate>Tue, 02 Feb 2021 14:39:55 GMT</pubDate>
+			<content:encoded>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>My First Statiq page</title>
+			<link>/test-action-001/posts/001</link>
+			<description>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</description>
+			<guid isPermaLink="false">/test-action-001/posts/001</guid>
+			<pubDate>Tue, 02 Feb 2021 14:39:55 GMT</pubDate>
+			<content:encoded>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 	</channel>
 </rss>
