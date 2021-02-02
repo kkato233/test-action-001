@@ -1,0 +1,13 @@
+MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.3"
+SiteTitle: シオン株式会社
+PageTitle: |
+  =>
+  {
+    string siteTitle = Context.GetString("SiteTitle");
+    string title = GetString("Title");
+    return string.IsNullOrWhiteSpace(siteTitle) ? title : (string.IsNullOrWhiteSpace(title) ? siteTitle : $"{siteTitle} - {title}");
+  }
+Copyright: => $"Copyright © {DateTime.Now.Year} シオン株式会社 All Rights Reserved."
+PostSources: posts/*
+IsPost: => Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)
+Layout: /_layout.cshtml

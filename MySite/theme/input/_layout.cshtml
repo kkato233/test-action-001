@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@Document.GetString("PageTitle")</title>
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+
+  @if(Document.ContainsKey(WebKeys.Description))
+  {
+    <meta name="description" content="@Document.GetString(WebKeys.Description)">
+  }
+  @if(Document.ContainsKey(WebKeys.Author))
+  {
+    <meta name="author" content="@Document.GetString(WebKeys.Author)">
+  }
+
+<meta name="application-name" content="@Document.GetString("SiteTitle")" />
+<meta name="msapplication-tooltip" content="@Document.GetString("SiteTitle")" />
+<meta name="msapplication-starturl" content="@Context.GetLink("/")" />
+<link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+<link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
+<link rel="stylesheet" href="@Context.GetLink("/css/style.css")">
+<script type="text/javascript" src="@Context.GetLink("/js/openclose.js")"></script>
+<script type="text/javascript" src="@Context.GetLink("/js/fixmenu_pagetop.js")"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+@Html.Partial("_head")
+@RenderSection("Head", false)
+</head>
+
+<body>
+
+<div id="container">
+
+<!-- Page Header -->
+@RenderSectionOrPartial("Header", "_header")
+
+<div id="content">
+	<!-- Main Content -->
+	<div id="main">
+	  @RenderBody()
+	</div>
+	<div id="sub">
+	  <!-- サブメニュー -->
+	  @RenderSectionOrPartial("SubMenu", "_sub_menu")
+	  @RenderSectionOrPartial("SubInfo", "_sub_info")
+	</div>
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="@Context.GetLink("/vendor/jquery/jquery.min.js")"></script>
+  <script src="@Context.GetLink("/vendor/bootstrap/js/bootstrap.bundle.min.js")"></script>
+
+  @Html.Partial("_scripts")
+
+  @RenderSection("Scripts", false)
+
+</div>
+<!--/sub-->
+
+</div>
+<!--/contents-->
+
+<!-- Footer -->  
+@RenderSectionOrPartial("Footer", "_footer")
+
+</div>
+<!--/container-->
+
+<!--小さな端末用（800px以下端末）メニュー-->
+<nav id="menubar-s">
+<ul>
+<li><a href="index.html">ホーム<span>HOME</span></a></li>
+<li><a href="company.html">会社概要<span>COMPANY</span></a></li>
+<li><a href="service.html">サービス<span>SERVICE</span></a></li>
+<li><a href="recruit.html">採用情報<span>RECRIT</span></a></li>
+<li><a href="contact.html">お問い合わせ<span>CONTACT</span></a></li>
+</ul>
+</nav>
+
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+<!--メニュー開閉ボタン-->
+<div id="menubar_hdr" class="close"></div>
+<!--メニューの開閉処理条件設定　800px以下-->
+<script type="text/javascript">
+if (OCwindowWidth() <= 800) {
+	open_close("menubar_hdr", "menubar-s");
+}
+</script>
+
+
+</body>
+
+</html>
