@@ -11,7 +11,7 @@ html側の `<body>` タグを `<body class="s-n">` として下さい。
 ### お問い合わせは、下記のフォームからお願いいたします。
 
 <div id="contact-form">
-<form action="#" class="large" method="post">                    
+<form action="/api/Contact" class="large" method="post">                    
 <table class="ta1">
 <tr>
 <th colspan="2" class="tamidashi">※マークは入力必須です</th>
@@ -102,3 +102,64 @@ html側の `<body>` タグを `<body class="s-n">` として下さい。
   crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script>
+    var validateOk = false;
+    $.validator.unobtrusive.options = {
+        invalidHandler: function () {
+            validateOk = false;
+        },
+        success: function () {
+            validateOk = true;
+        }
+    };
+</script>
+<script>
+    jQuery(function ($) {
+        $('#contact-form-item').submit(function (event) {
+            if (validateOk == false) return;
+            // HTMLでの送信をキャンセル
+            event.preventDefault();
+            // 操作対象のフォーム要素を取得
+            var $form = $(this);
+            // 送信ボタンを取得
+            // （後で使う: 二重送信を防止する。）
+            var $button = $form.find("input[type='submit']");
+            var JSONdata = {
+                Name: $("#Mail_UserName").val(),
+                Email: $("#Mail_Email").val(),
+                Message: $("#Mail_Message").val(),
+            };
+			if (confirm('下記の内容で送信します。よろしいですか？')) {
+            // 送信
+            $.ajax({
+                url: "/api/Contact",
+                type: "post",
+                data: JSON.stringify(JSONdata), // フォームの内容
+                contentType: 'application/JSON',
+                timeout: 10000,  // 単位はミリ秒
+                // 送信前
+                beforeSend: function (xhr, settings) {
+                    // ボタンを無効化し、二重送信を防止
+                    $button.attr('disabled', true);
+                },
+                // 応答後
+                complete: function (xhr, textStatus) {
+                    // ボタンを有効化し、再送信を許可
+                    $button.attr('disabled', false);
+                },
+                // 通信成功時の処理
+                success: function (result, textStatus, xhr) {
+                    // 入力値を初期化
+                    $form[0].reset();
+                    alert("お問い合わせありがとうございました。後日担当から連絡差し上げます。");
+                    window.location.href = "/Contact?submit=true";
+                },
+                // 通信失敗時の処理
+                error: function (xhr, textStatus, error) { 
+                	alert("データ送信エラー。別の方法でお問い合わせください。" );
+                }
+            });
+            }
+        });
+    });
+</script>
