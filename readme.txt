@@ -11,5 +11,5 @@ dotnet run -- deploy
 
 で GitHub に 配布できる。
 
-コミットを push すると WEB サイトが自動的に生成される。
+コミットを push すると WEB サイトが Azure 上に 自動的に生成される。
 
