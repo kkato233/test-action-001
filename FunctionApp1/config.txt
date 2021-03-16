@@ -1,0 +1,6 @@
+﻿Issue 登録のためには 下記の 環境設定が必要
+
+  "GitHub_Token": GitHub のセキュリティーToken
+  "GitHub_Owner": GitHub 登録ユーザ名
+  "GitHub_RepName": GitHub 登録 リポジトリ名
+
