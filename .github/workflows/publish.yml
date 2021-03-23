@@ -24,7 +24,7 @@ jobs:
     - run: dotnet run 
       working-directory: MySite
       env:
-        LINKROOT: ${{ secrets.LINKROOT }}
+        LINKROOT: / # サイトの VirtualPath を指定する
     - name: Build And Deploy
       id: builddeploy
       uses: Azure/static-web-apps-deploy@v0.0.1-preview
