@@ -2,17 +2,17 @@
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title />
-		<link>/test-action-001</link>
+		<link>/my-first-static-web-app</link>
 		<description />
 		<copyright>Copyright © 2021 シオン株式会社 All Rights Reserved.</copyright>
-		<pubDate>Tue, 02 Feb 2021 14:41:52 GMT</pubDate>
-		<lastBuildDate>Tue, 02 Feb 2021 14:41:52 GMT</lastBuildDate>
+		<pubDate>Sun, 04 Apr 2021 09:56:19 GMT</pubDate>
+		<lastBuildDate>Sun, 04 Apr 2021 09:56:19 GMT</lastBuildDate>
 		<item>
 			<title>INDEX</title>
-			<link>/test-action-001/posts/002</link>
+			<link>/my-first-static-web-app/posts/002</link>
 			<description>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</description>
-			<guid isPermaLink="false">/test-action-001/posts/002</guid>
-			<pubDate>Tue, 02 Feb 2021 14:39:55 GMT</pubDate>
+			<guid isPermaLink="false">/my-first-static-web-app/posts/002</guid>
+			<pubDate>Tue, 23 Feb 2021 13:21:14 GMT</pubDate>
 			<content:encoded>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
 &lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
 </content:encoded>
@@ -20,10 +20,10 @@
 		</item>
 		<item>
 			<title>My First Statiq page</title>
-			<link>/test-action-001/posts/001</link>
+			<link>/my-first-static-web-app/posts/001</link>
 			<description>&lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;</description>
-			<guid isPermaLink="false">/test-action-001/posts/001</guid>
-			<pubDate>Tue, 02 Feb 2021 14:39:55 GMT</pubDate>
+			<guid isPermaLink="false">/my-first-static-web-app/posts/001</guid>
+			<pubDate>Tue, 23 Feb 2021 13:21:14 GMT</pubDate>
 			<content:encoded>&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
 &lt;p&gt;Hello from my first Statiq page.&lt;/p&gt;
 </content:encoded>
