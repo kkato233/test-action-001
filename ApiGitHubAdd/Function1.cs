@@ -15,10 +15,14 @@ namespace FunctionApp1
     public class Function1
     {
         GitHubIssueService _github;
+
+        ContactMailSendService _supportMail;
+
         public static IConfiguration Configuration { get; set; }
-        public Function1(GitHubIssueService github, IConfiguration configuration)
+        public Function1(GitHubIssueService github, ContactMailSendService supportMail, IConfiguration configuration)
         {
             this._github = github;
+            this._supportMail = supportMail;
             Configuration = configuration;
         }
 
@@ -28,11 +32,6 @@ namespace FunctionApp1
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string name = req.Query["name"];
-            string email = req.Query["email"];
-            string address = req.Query["address"];
-            string message = req.Query["message"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
@@ -55,11 +54,27 @@ namespace FunctionApp1
 
                     string body = string.Join("\r\n", lines);
 
-                    // GitHub Ç… ÉfÅ[É^ìoò^
-                    await _github.AddIssue(title, body);
+                    if (_github.CheckEnv())
+                    {
+                        // GitHub Ç… ÉfÅ[É^ìoò^
+                        await _github.AddIssue(title, body);
 
-                    // ìoò^ê≥èÌÇï‘Ç∑
-                    return new JsonResult(new { success = true });
+                        // ê≥èÌÇï‘Ç∑
+                        return new JsonResult(new { success = true });
+                    } 
+                    else if (_supportMail.CheckEnv())
+                    {
+                        // ÉÅÅ[ÉãëóêM
+                        await _supportMail.SendMailAsync(title, body);
+
+                        // ê≥èÌÇï‘Ç∑
+                        return new JsonResult(new { success = true });
+                    }
+                    else
+                    {
+                        // ìoò^ÉGÉâÅ[Çï‘Ç∑
+                        return new JsonResult(new { success = false });
+                    }
                 }
                 else
                 {

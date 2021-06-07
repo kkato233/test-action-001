@@ -4,3 +4,9 @@
   "GitHub_Owner": GitHub 登録ユーザ名
   "GitHub_RepName": GitHub 登録 リポジトリ名
 
+サポートメール送信設定
+
+string SMTPServer = Configuration["SupportMail:SMTPServer"];
+string SMTPLoginUserName = Configuration["SupportMail:SMTPLoginUserName"];
+string SMTPLoginPassword = Configuration["SupportMail:SMTPLoginPassword"];
+string ToMailAddress = Configuration["SupportMail:ToMailAddress"];

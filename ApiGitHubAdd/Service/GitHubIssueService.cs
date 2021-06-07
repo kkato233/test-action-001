@@ -24,6 +24,25 @@ namespace FunctionApp1.Service
             this._log = log;
         }
 
+        /// <summary>
+        /// 環境変数チェック
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckEnv()
+        {
+            if (Configuration["GitHub_Token"]?.Length > 0 &&
+                Configuration["GitHub_Owner"]?.Length > 0 &&
+                Configuration["GitHub_RepName"]?.Length > 0)
+            {
+                // 環境変数設定されている
+                return true;
+            } 
+            else
+            {
+                return false;
+            }
+        }
+
         public async Task AddIssue(string title, string body)
         {
             var client = new GitHubClient(new ProductHeaderValue("WebContactFormApp"));
